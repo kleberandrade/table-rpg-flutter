@@ -1,4 +1,4 @@
-package com.example.table_rpg
+package com.kleberandrade.table_rpg
 
 import android.os.Bundle
 

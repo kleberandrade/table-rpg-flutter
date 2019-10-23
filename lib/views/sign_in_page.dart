@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internationalization/internationalization.dart';
 import 'package:table_rpg/services/auth.dart';
 import 'package:table_rpg/views/sign_up.page.dart';
 
@@ -41,7 +42,7 @@ class _SignInPageState extends State<SignInPage> {
       controller: _emailController,
       keyboardType: TextInputType.emailAddress,
       decoration:
-          InputDecoration(hintText: 'Email', prefixIcon: Icon(Icons.email)),
+          InputDecoration(hintText: Strings.of(context).valueOf("email"), prefixIcon: Icon(Icons.email)),
     );
   }
 
@@ -57,7 +58,7 @@ class _SignInPageState extends State<SignInPage> {
       keyboardType: TextInputType.text,
       obscureText: _obscurePassword,
       decoration: InputDecoration(
-        hintText: 'Senha',
+        hintText: Strings.of(context).valueOf("password"),
         prefixIcon: Icon(Icons.vpn_key),
         suffixIcon: IconButton(
           icon:
@@ -82,7 +83,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget _showSignInButton() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 32.0),
-      child: RaisedButton(child: Text('LOGIN'), onPressed: _signIn),
+      child: RaisedButton(child: Text(Strings.of(context).valueOf("signin")), onPressed: _signIn),
     );
   }
 
@@ -91,6 +92,6 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   Widget _showSignUpButton() {
-    return FlatButton(child: Text('Registrar-se'), onPressed: _signUp);
+    return FlatButton(child: Text(Strings.of(context).valueOf("create_account")), onPressed: _signUp);
   }
 }
